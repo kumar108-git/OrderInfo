@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: orders_user
+    password: Orders@Admin
+jpa:
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      default_schema: sch
+      format_sql: true
+  hibernate:
+    ddl-auto: update
+  show-sql: true
+  sql:
+    init:
+      mode: always
+      platform: postgresql
+server:
+    port: 8081
+logging:
+  level:
+    org.springframework.jdbc.core: TRACE
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
